@@ -1,8 +1,7 @@
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 from models import Rule  # Assuming the Rule model is defined in models.py
-
-DATABASE_URI = "postgresql://rule_user:1234567@localhost:5433/rule_engine"
+from main import DATABASE_URL as DATABASE_URI
 
 
 # Create the SQLAlchemy engine and session

@@ -1,5 +1,3 @@
-# main.py
-
 from fastapi import FastAPI, HTTPException, Depends
 from pydantic import BaseModel
 from typing import List, Any
@@ -20,7 +18,8 @@ app = FastAPI(title="3-Tier Rule Engine with AST")
 # -----------------------
 
 # PostgreSQL connection string
-DATABASE_URL = "postgresql://rule_user:1234567@localhost:5433/rule_engine"
+# DATABASE_URL = "postgresql://rule_user:1234567@localhost:5433/rule_engine"
+DATABASE_URL = "postgresql://rule_user:1234567@host.docker.internal:5433/rule_engine"
 
 # Create the SQLAlchemy engine
 engine = create_engine(DATABASE_URL)

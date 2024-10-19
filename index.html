@@ -122,7 +122,7 @@
             const name = document.getElementById('ruleName').value;
             const rule_string = document.getElementById('ruleString').value;
 
-            const response = await fetch('http://127.0.0.1:8000/create_rule', {
+            const response = await fetch('http://0.0.0.0:8000/create_rule', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
@@ -144,7 +144,7 @@
         }
 
         async function downloadDatabase() {
-            const response = await fetch('http://127.0.0.1:8000/database', {
+            const response = await fetch('http://0.0.0.0:8000/database', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
@@ -172,7 +172,7 @@
             const ruleIds = document.getElementById('combineRuleIds').value.split(',').map(id => id.trim());
             const combinedName = document.getElementById('combinedRuleName').value;
 
-            const response = await fetch('http://127.0.0.1:8000/combine_rules', {
+            const response = await fetch('http://0.0.0.0:8000/combine_rules', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
@@ -197,7 +197,7 @@
             const combinedAst = document.getElementById('evaluateRuleAst').value;
             const userData = document.getElementById('userData').value;
 
-            const response = await fetch('http://127.0.0.1:8000/evaluate_rule', {
+            const response = await fetch('http://0.0.0.0:8000/evaluate_rule', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'

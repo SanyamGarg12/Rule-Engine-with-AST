@@ -391,5 +391,151 @@
             }
         },
         "created_at": "2024-10-19 07:35:31.307744+05:30"
+    },
+    {
+        "id": "9e79b6e0-9d34-47eb-ba42-0592e0c77744",
+        "name": "TEST",
+        "ast": {
+            "type": "operator",
+            "operator": "AND",
+            "left": {
+                "type": "operator",
+                "value": "AND",
+                "left": {
+                    "type": "operator",
+                    "value": "OR",
+                    "left": {
+                        "type": "operator",
+                        "value": "AND",
+                        "left": {
+                            "type": "operand",
+                            "value": {
+                                "field": "age",
+                                "operator": ">",
+                                "value": "30"
+                            }
+                        },
+                        "right": {
+                            "type": "operand",
+                            "value": {
+                                "field": "department",
+                                "operator": "=",
+                                "value": "Sales"
+                            }
+                        }
+                    },
+                    "right": {
+                        "type": "operator",
+                        "value": "AND",
+                        "left": {
+                            "type": "operand",
+                            "value": {
+                                "field": "age",
+                                "operator": "<",
+                                "value": "25"
+                            }
+                        },
+                        "right": {
+                            "type": "operand",
+                            "value": {
+                                "field": "department",
+                                "operator": "=",
+                                "value": "Marketing"
+                            }
+                        }
+                    }
+                },
+                "right": {
+                    "type": "operator",
+                    "value": "OR",
+                    "left": {
+                        "type": "operand",
+                        "value": {
+                            "field": "salary",
+                            "operator": ">",
+                            "value": "50000"
+                        }
+                    },
+                    "right": {
+                        "type": "operand",
+                        "value": {
+                            "field": "experience",
+                            "operator": ">",
+                            "value": "5"
+                        }
+                    }
+                }
+            },
+            "right": {
+                "type": "operator",
+                "value": "AND",
+                "left": {
+                    "type": "operator",
+                    "value": "AND",
+                    "left": {
+                        "type": "operand",
+                        "value": {
+                            "field": "age",
+                            "operator": ">",
+                            "value": "30"
+                        }
+                    },
+                    "right": {
+                        "type": "operand",
+                        "value": {
+                            "field": "department",
+                            "operator": "=",
+                            "value": "Marketing"
+                        }
+                    }
+                },
+                "right": {
+                    "type": "operator",
+                    "value": "OR",
+                    "left": {
+                        "type": "operand",
+                        "value": {
+                            "field": "salary",
+                            "operator": ">",
+                            "value": "20000"
+                        }
+                    },
+                    "right": {
+                        "type": "operand",
+                        "value": {
+                            "field": "experience",
+                            "operator": ">",
+                            "value": "5"
+                        }
+                    }
+                }
+            }
+        },
+        "created_at": "2024-10-19 07:52:16.519894+05:30"
+    },
+    {
+        "id": "e03a7d31-3848-4e49-8d47-f50c4330e2f3",
+        "name": "sdfsad",
+        "ast": {
+            "type": "operator",
+            "value": "AND",
+            "left": {
+                "type": "operand",
+                "value": {
+                    "field": "A",
+                    "operator": ">",
+                    "value": "10"
+                }
+            },
+            "right": {
+                "type": "operand",
+                "value": {
+                    "field": "B",
+                    "operator": ">",
+                    "value": "1"
+                }
+            }
+        },
+        "created_at": "2024-10-19 07:59:16.236390+05:30"
     }
 ]
