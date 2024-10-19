@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API Test</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+
+        h2 {
+            color: #007BFF;
+            margin-top: 20px;
+        }
+
+        label {
+            display: block;
+            margin: 10px 0 5px;
+        }
+
+        input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+            margin-bottom: 15px;
+        }
+
+        button {
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        p {
+            margin-top: 10px;
+            padding: 10px;
+            background-color: #e9ecef;
+            border-left: 5px solid #007BFF;
+            border-radius: 5px;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        @media (max-width: 600px) {
+            input[type="text"], button {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Rule Engine API Test</h1>
+
+        <!-- Create Rule Section -->
+        <h2>Create Rule</h2>
+        <label for="ruleName">Rule Name:</label>
+        <input type="text" id="ruleName" placeholder="Enter rule name" required>
+        
+        <label for="ruleString">Rule String:</label>
+        <input type="text" id="ruleString" placeholder="Enter rule string" required>
+        
+        <button onclick="createRule()">Create Rule</button>
+        <p id="createRuleResponse"></p>
+
+        <!-- Download Database Section -->
+        <h2>Download Database</h2>
+        <button onclick="downloadDatabase()">Download Database</button>
+
+        <!-- Combine Rules Section -->
+        <h2>Combine Rules</h2>
+        <label for="combineRuleIds">Enter Rule IDs (comma separated):</label>
+        <input type="text" id="combineRuleIds" placeholder="Enter rule IDs" required>
+        
+        <label for="combinedRuleName">Combined Rule Name:</label>
+        <input type="text" id="combinedRuleName" placeholder="Optional combined rule name">
+        
+        <button onclick="combineRules()">Combine Rules</button>
+        <p id="combineRulesResponse"></p>
+
+        <!-- Evaluate Rule Section -->
+        <h2>Evaluate Rule</h2>
+        <label for="evaluateRuleAst">Combined Rule AST:</label>
+        <input type="text" id="evaluateRuleAst" placeholder="Enter combined AST" required>
+        
+        <label for="userData">User Data (JSON):</label>
+        <input type="text" id="userData" placeholder='{"x": 15, "y": 5}' required>
+        
+        <button onclick="evaluateRule()">Evaluate Rule</button>
+        <p id="evaluateRuleResponse"></p>
+    </div>
+
+    <!-- Script to include your JavaScript -->
+    <script>
+        async function createRule() {
+            const name = document.getElementById('ruleName').value;
+            const rule_string = document.getElementById('ruleString').value;
+
+            const response = await fetch('http://127.0.0.1:8000/create_rule', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    name: name,
+                    rule_string: rule_string,
+                })
+            });
+
+            const data = await response.json();
+            const messageElement = document.getElementById('createRuleResponse');
+
+            if (response.ok) {
+                messageElement.textContent = 'Success: ' + JSON.stringify(data);
+            } else {
+                messageElement.textContent = 'Error: ' + data.detail;
+            }
+        }
+
+        async function downloadDatabase() {
+            const response = await fetch('http://127.0.0.1:8000/database', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+            });
+
+            if (response.ok) {
+                const data = await response.json();
+                const jsonBlob = new Blob([JSON.stringify(data, null, 2)], { type: 'application/json' });
+                const url = URL.createObjectURL(jsonBlob);
+
+                const a = document.createElement('a');
+                a.href = url;
+                a.download = 'RulesDB.json';
+                document.body.appendChild(a);
+                a.click();
+                document.body.removeChild(a);
+                URL.revokeObjectURL(url); // Cleanup
+            } else {
+                alert('Error generating database: ' + response.statusText);
+            }
+        }
+
+        async function combineRules() {
+            const ruleIds = document.getElementById('combineRuleIds').value.split(',').map(id => id.trim());
+            const combinedName = document.getElementById('combinedRuleName').value;
+
+            const response = await fetch('http://127.0.0.1:8000/combine_rules', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    rule_ids: ruleIds,
+                    name: combinedName,
+                })
+            });
+
+            const data = document.getElementById('combineRulesResponse');
+
+            if (response.ok) {
+                const result = await response.json();
+                data.textContent = 'Combined Rule Created: ' + JSON.stringify(result);
+            } else {
+                data.textContent = 'Error: ' + (await response.json()).detail;
+            }
+        }
+
+        async function evaluateRule() {
+            const combinedAst = document.getElementById('evaluateRuleAst').value;
+            const userData = document.getElementById('userData').value;
+
+            const response = await fetch('http://127.0.0.1:8000/evaluate_rule', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    combined_ast: JSON.parse(combinedAst),
+                    user_data: JSON.parse(userData),
+                })
+            });
+
+            const data = document.getElementById('evaluateRuleResponse');
+
+            if (response.ok) {
+                const result = await response.json();
+                data.textContent = 'Evaluation Result: ' + JSON.stringify(result);
+            } else {
+                data.textContent = 'Error: ' + (await response.json()).detail;
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,124 @@
+{
+  "combined_ast": {
+    "type": "operator",
+    "operator": "AND",
+    "left": {
+      "type": "operator",
+      "value": "AND",
+      "left": {
+        "type": "operator",
+        "value": "OR",
+        "left": {
+          "type": "operator",
+          "value": "AND",
+          "left": {
+            "type": "operand",
+            "value": {
+              "field": "age",
+              "operator": ">",
+              "value": "30"
+            }
+          },
+          "right": {
+            "type": "operand",
+            "value": {
+              "field": "department",
+              "operator": "=",
+              "value": "Sales"
+            }
+          }
+        },
+        "right": {
+          "type": "operator",
+          "value": "AND",
+          "left": {
+            "type": "operand",
+            "value": {
+              "field": "age",
+              "operator": "<",
+              "value": "25"
+            }
+          },
+          "right": {
+            "type": "operand",
+            "value": {
+              "field": "department",
+              "operator": "=",
+              "value": "Marketing"
+            }
+          }
+        }
+      },
+      "right": {
+        "type": "operator",
+        "value": "OR",
+        "left": {
+          "type": "operand",
+          "value": {
+            "field": "salary",
+            "operator": ">",
+            "value": "50000"
+          }
+        },
+        "right": {
+          "type": "operand",
+          "value": {
+            "field": "experience",
+            "operator": ">",
+            "value": "5"
+          }
+        }
+      }
+    },
+    "right": {
+      "type": "operator",
+      "value": "AND",
+      "left": {
+        "type": "operator",
+        "value": "AND",
+        "left": {
+          "type": "operand",
+          "value": {
+            "field": "age",
+            "operator": ">",
+            "value": "30"
+          }
+        },
+        "right": {
+          "type": "operand",
+          "value": {
+            "field": "department",
+            "operator": "=",
+            "value": "Marketing"
+          }
+        }
+      },
+      "right": {
+        "type": "operator",
+        "value": "OR",
+        "left": {
+          "type": "operand",
+          "value": {
+            "field": "salary",
+            "operator": ">",
+            "value": "20000"
+          }
+        },
+        "right": {
+          "type": "operand",
+          "value": {
+            "field": "experience",
+            "operator": ">",
+            "value": "5"
+          }
+        }
+      }
+    }
+  },
+  "user_data": {
+    "age": 31,
+    "department": "Sales",
+    "salary": 60000,
+    "experience": 6
+  }  
+}

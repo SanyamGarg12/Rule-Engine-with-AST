@@ -1,0 +1,395 @@
+[
+    {
+        "id": "98e07d80-3182-4bcc-be20-df1443f724f3",
+        "name": "rule1",
+        "ast": {
+            "type": "operator",
+            "value": "AND",
+            "left": {
+                "type": "operator",
+                "value": "OR",
+                "left": {
+                    "type": "operator",
+                    "value": "AND",
+                    "left": {
+                        "type": "operand",
+                        "value": {
+                            "field": "age",
+                            "operator": ">",
+                            "value": "30"
+                        }
+                    },
+                    "right": {
+                        "type": "operand",
+                        "value": {
+                            "field": "department",
+                            "operator": "=",
+                            "value": "Sales"
+                        }
+                    }
+                },
+                "right": {
+                    "type": "operator",
+                    "value": "AND",
+                    "left": {
+                        "type": "operand",
+                        "value": {
+                            "field": "age",
+                            "operator": "<",
+                            "value": "25"
+                        }
+                    },
+                    "right": {
+                        "type": "operand",
+                        "value": {
+                            "field": "department",
+                            "operator": "=",
+                            "value": "Marketing"
+                        }
+                    }
+                }
+            },
+            "right": {
+                "type": "operator",
+                "value": "OR",
+                "left": {
+                    "type": "operand",
+                    "value": {
+                        "field": "salary",
+                        "operator": ">",
+                        "value": "50000"
+                    }
+                },
+                "right": {
+                    "type": "operand",
+                    "value": {
+                        "field": "experience",
+                        "operator": ">",
+                        "value": "5"
+                    }
+                }
+            }
+        },
+        "created_at": "2024-10-18 11:03:30.420747+05:30"
+    },
+    {
+        "id": "2324df7a-ddda-47fb-8508-5a71c8d6d98f",
+        "name": "rule2",
+        "ast": {
+            "type": "operator",
+            "value": "AND",
+            "left": {
+                "type": "operator",
+                "value": "AND",
+                "left": {
+                    "type": "operand",
+                    "value": {
+                        "field": "age",
+                        "operator": ">",
+                        "value": "30"
+                    }
+                },
+                "right": {
+                    "type": "operand",
+                    "value": {
+                        "field": "department",
+                        "operator": "=",
+                        "value": "Marketing"
+                    }
+                }
+            },
+            "right": {
+                "type": "operator",
+                "value": "OR",
+                "left": {
+                    "type": "operand",
+                    "value": {
+                        "field": "salary",
+                        "operator": ">",
+                        "value": "20000"
+                    }
+                },
+                "right": {
+                    "type": "operand",
+                    "value": {
+                        "field": "experience",
+                        "operator": ">",
+                        "value": "5"
+                    }
+                }
+            }
+        },
+        "created_at": "2024-10-18 11:06:09.120385+05:30"
+    },
+    {
+        "id": "123fb1b9-c050-4145-812b-68ee2eba8b31",
+        "name": "combined_rule_dad41391-89a7-40c2-8f78-89f700597fc4",
+        "ast": {
+            "type": "operator",
+            "operator": "AND",
+            "left": {
+                "type": "operator",
+                "value": "AND",
+                "left": {
+                    "type": "operator",
+                    "value": "OR",
+                    "left": {
+                        "type": "operator",
+                        "value": "AND",
+                        "left": {
+                            "type": "operand",
+                            "value": {
+                                "field": "age",
+                                "operator": ">",
+                                "value": "30"
+                            }
+                        },
+                        "right": {
+                            "type": "operand",
+                            "value": {
+                                "field": "department",
+                                "operator": "=",
+                                "value": "Sales"
+                            }
+                        }
+                    },
+                    "right": {
+                        "type": "operator",
+                        "value": "AND",
+                        "left": {
+                            "type": "operand",
+                            "value": {
+                                "field": "age",
+                                "operator": "<",
+                                "value": "25"
+                            }
+                        },
+                        "right": {
+                            "type": "operand",
+                            "value": {
+                                "field": "department",
+                                "operator": "=",
+                                "value": "Marketing"
+                            }
+                        }
+                    }
+                },
+                "right": {
+                    "type": "operator",
+                    "value": "OR",
+                    "left": {
+                        "type": "operand",
+                        "value": {
+                            "field": "salary",
+                            "operator": ">",
+                            "value": "50000"
+                        }
+                    },
+                    "right": {
+                        "type": "operand",
+                        "value": {
+                            "field": "experience",
+                            "operator": ">",
+                            "value": "5"
+                        }
+                    }
+                }
+            },
+            "right": {
+                "type": "operator",
+                "value": "AND",
+                "left": {
+                    "type": "operator",
+                    "value": "AND",
+                    "left": {
+                        "type": "operand",
+                        "value": {
+                            "field": "age",
+                            "operator": ">",
+                            "value": "30"
+                        }
+                    },
+                    "right": {
+                        "type": "operand",
+                        "value": {
+                            "field": "department",
+                            "operator": "=",
+                            "value": "Marketing"
+                        }
+                    }
+                },
+                "right": {
+                    "type": "operator",
+                    "value": "OR",
+                    "left": {
+                        "type": "operand",
+                        "value": {
+                            "field": "salary",
+                            "operator": ">",
+                            "value": "20000"
+                        }
+                    },
+                    "right": {
+                        "type": "operand",
+                        "value": {
+                            "field": "experience",
+                            "operator": ">",
+                            "value": "5"
+                        }
+                    }
+                }
+            }
+        },
+        "created_at": "2024-10-18 11:37:39.834531+05:30"
+    },
+    {
+        "id": "caf35e9a-fe73-4a9a-a0e5-09b30b2522cc",
+        "name": "string",
+        "ast": {
+            "type": "operator",
+            "value": "AND",
+            "left": {
+                "type": "operand",
+                "value": {
+                    "field": "x",
+                    "operator": "<",
+                    "value": "10"
+                }
+            },
+            "right": {
+                "type": "operand",
+                "value": {
+                    "field": "y",
+                    "operator": "<",
+                    "value": "20"
+                }
+            }
+        },
+        "created_at": "2024-10-19 07:25:58.519271+05:30"
+    },
+    {
+        "id": "ea0ab5f8-dbef-42d8-affe-ac7edf2a279b",
+        "name": "Sample Rule",
+        "ast": {
+            "type": "operator",
+            "value": "AND",
+            "left": {
+                "type": "operand",
+                "value": {
+                    "field": "x",
+                    "operator": ">",
+                    "value": "10"
+                }
+            },
+            "right": {
+                "type": "operand",
+                "value": {
+                    "field": "y",
+                    "operator": "<",
+                    "value": "20"
+                }
+            }
+        },
+        "created_at": "2024-10-19 07:26:54.408889+05:30"
+    },
+    {
+        "id": "dce0ccf3-26f4-431f-a02d-30346e605f82",
+        "name": "sanyam",
+        "ast": {
+            "type": "operator",
+            "value": "AND",
+            "left": {
+                "type": "operand",
+                "value": {
+                    "field": "age",
+                    "operator": "=",
+                    "value": "20"
+                }
+            },
+            "right": {
+                "type": "operand",
+                "value": {
+                    "field": "y",
+                    "operator": "<",
+                    "value": "10"
+                }
+            }
+        },
+        "created_at": "2024-10-19 07:31:25.407057+05:30"
+    },
+    {
+        "id": "6d2b15e2-0942-480d-9793-6f90bfb9aaca",
+        "name": "sanyam2",
+        "ast": {
+            "type": "operator",
+            "value": "AND",
+            "left": {
+                "type": "operand",
+                "value": {
+                    "field": "age",
+                    "operator": "=",
+                    "value": "20"
+                }
+            },
+            "right": {
+                "type": "operand",
+                "value": {
+                    "field": "y",
+                    "operator": "<",
+                    "value": "10"
+                }
+            }
+        },
+        "created_at": "2024-10-19 07:33:00.334498+05:30"
+    },
+    {
+        "id": "ec17be7d-e005-4b68-8367-0cfe4f9d91c7",
+        "name": "strinsdsg",
+        "ast": {
+            "type": "operator",
+            "value": "AND",
+            "left": {
+                "type": "operand",
+                "value": {
+                    "field": "A",
+                    "operator": ">",
+                    "value": "10"
+                }
+            },
+            "right": {
+                "type": "operand",
+                "value": {
+                    "field": "B",
+                    "operator": "<",
+                    "value": "20"
+                }
+            }
+        },
+        "created_at": "2024-10-19 07:35:19.028059+05:30"
+    },
+    {
+        "id": "1b1abb0d-83ae-48b7-85ff-1749fd920077",
+        "name": "strin2sdsg",
+        "ast": {
+            "type": "operator",
+            "value": "AND",
+            "left": {
+                "type": "operand",
+                "value": {
+                    "field": "A",
+                    "operator": ">",
+                    "value": "10"
+                }
+            },
+            "right": {
+                "type": "operand",
+                "value": {
+                    "field": "B",
+                    "operator": "<",
+                    "value": "20"
+                }
+            }
+        },
+        "created_at": "2024-10-19 07:35:31.307744+05:30"
+    }
+]

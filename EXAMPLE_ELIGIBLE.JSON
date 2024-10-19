@@ -1,0 +1,39 @@
+{
+    "combined_ast": {
+        "type": "operator",
+        "operator": "AND",
+        "left": {
+            "type": "operator",
+            "operator": "AND",
+            "left": {
+                "type": "operand",
+                "value": {
+                    "field": "age",
+                    "operator": ">",
+                    "value": "30"
+                }
+            },
+            "right": {
+                "type": "operand",
+                "value": {
+                    "field": "department",
+                    "operator": "=",
+                    "value": "Sales"
+                }
+            }
+        },
+        "right": {
+            "type": "operand",
+            "value": {
+                "field": "salary",
+                "operator": ">",
+                "value": "50000"
+            }
+        }
+    },
+    "user_data": {
+        "age": 35,
+        "department": "Sales",
+        "salary": 60000
+    }
+}
