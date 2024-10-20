@@ -27,13 +27,18 @@
             margin: 10px 0 5px;
         }
 
-        input[type="text"] {
+        input[type="text"], textarea {
             width: 100%;
             padding: 10px;
             border: 1px solid #ccc;
             border-radius: 5px;
             box-sizing: border-box;
             margin-bottom: 15px;
+        }
+
+        textarea {
+            resize: vertical;
+            height: 150px; /* Default height, can be adjusted */
         }
 
         button {
@@ -68,7 +73,7 @@
         }
 
         @media (max-width: 600px) {
-            input[type="text"], button {
+            input[type="text"], textarea, button {
                 width: 100%;
             }
         }
@@ -107,10 +112,10 @@
         <!-- Evaluate Rule Section -->
         <h2>Evaluate Rule</h2>
         <label for="evaluateRuleAst">Combined Rule AST (JSON format):</label>
-        <input type="text" id="evaluateRuleAst" placeholder="Enter combined AST" required>
+        <textarea id="evaluateRuleAst" placeholder="Enter combined AST" required></textarea>
         
         <label for="userData">User Data (JSON):</label>
-        <input type="text" id="userData" placeholder='{"x": 15, "y": 5}' required>
+        <textarea id="userData" placeholder='{"x": 15, "y": 5}' required></textarea>
         
         <button onclick="evaluateRule()">Evaluate Rule</button>
         <p id="evaluateRuleResponse"></p>

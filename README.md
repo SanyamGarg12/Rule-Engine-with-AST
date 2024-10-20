@@ -83,3 +83,20 @@ A simple rule engine implemented with FastAPI and PostgreSQL. This application a
     ```bash
     docker load -i rule-engine-app.tar
 
+### Application will look like this
+
+1. **CREATE RULE**
+![alt text](sample_images/image.png)
+
+2. **Combine RULE**
+![alt text](sample_images/image-1.png)
+
+3. **Evaluate Rule**
+
+- **Example of an Eligible User**  
+  Refer to the JSON file: [EXAMPLE_ELIGIBLE.JSON](./EXAMPLE_ELIGIBLE.JSON)  
+  ![Eligible User Example](sample_images/image_3.png)
+
+- **Example of a Not Eligible User**  
+  Refer to the JSON file: [EXAMPLE_NOT_ELIGIBLE.JSON](./EXAMPLE_NOT_ELIGIBLE.JSON)  
+  ![Not Eligible User Example](sample_images/image_4.png)
