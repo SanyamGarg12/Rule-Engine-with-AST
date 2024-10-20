@@ -9,6 +9,8 @@ A simple rule engine implemented with FastAPI and PostgreSQL. This application a
 - [Installation](#installation)
 - [Running with Docker Hub](#running-with-docker-image-using-docker-hub)
 - [Using .tar as alternate of Docker Hub](#using-tar-file-instead-of-docker-hub)
+- [Download Database](#download-current-database)
+- [Delete Database](#delete-all-entries-in-the-database)
 - [License](#license)
 
 ## Features
@@ -98,3 +100,18 @@ A simple rule engine implemented with FastAPI and PostgreSQL. This application a
 - **Example of a Not Eligible User**  
   Refer to the JSON file: [EXAMPLE_NOT_ELIGIBLE.JSON](./EXAMPLE_NOT_ELIGIBLE.JSON)  
   ![Not Eligible User Example](sample_images/image_4.png)
+
+## Download Current Database
+
+- **Run the following command in the project directory:**
+    ```bash
+    python curr_db.py
+    ```
+
+## Delete All Entries in the Database
+
+- **To delete all entries, run this command in the project directory:**
+    ```bash
+    python empty_db.py
+    ```
+
