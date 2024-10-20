@@ -66,10 +66,29 @@ A simple rule engine implemented with FastAPI and PostgreSQL. This application a
 
     ```bash
     docker login
+    ```
 
 2. **Pull the docker image from docker hub:**
     ```bash
     docker pull sanyamgarg12/rule-engine-app
+    ```
+
+3. **Run Backend**
+    ```bash
+    docker run -p 8000:8000 sanyamgarg12/rule-engine-app
+    ```
+4. **Run Frontend in separate terminal**
+   - **Enter project directory**
+    ``` bash
+    cd RULE-ENGINE-WITH-AST
+    ```
+   - **Execute index.html**
+    ``` bash
+    start .\index.html
+    ```
+
+Open your web browser and navigate to http://localhost:8000 to access the Rule Engine API.
+
 
 ## Using .tar file instead of Docker Hub
 
@@ -77,6 +96,7 @@ A simple rule engine implemented with FastAPI and PostgreSQL. This application a
 
     ```bash
     docker login
+    ```
 
 2. **Pull the docker image from docker hub:**
 
