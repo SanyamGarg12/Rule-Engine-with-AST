@@ -77,6 +77,7 @@ A simple rule engine implemented with FastAPI and PostgreSQL. This application a
     ```bash
     docker run -p 8000:8000 sanyamgarg12/rule-engine-app
     ```
+   Note : Make sure you have postgres setup
 4. **Run Frontend in separate terminal**
    - **Enter project directory**
     ``` bash
