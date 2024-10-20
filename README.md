@@ -7,10 +7,8 @@ A simple rule engine implemented with FastAPI and PostgreSQL. This application a
 - [Features](#features)
 - [Technologies](#technologies)
 - [Installation](#installation)
-- [Usage](#usage)
-- [API Endpoints](#api-endpoints)
-- [Database Schema](#database-schema)
-- [Contributing](#contributing)
+- [Running with Docker Hub](#running-with-docker-image-using-docker-hub)
+- [Using .tar as alternate of Docker Hub](#using-tar-file-instead-of-docker-hub)
 - [License](#license)
 
 ## Features
@@ -83,7 +81,7 @@ A simple rule engine implemented with FastAPI and PostgreSQL. This application a
     ```bash
     docker load -i rule-engine-app.tar
 
-### Application will look like this
+## How Application will look
 
 1. **CREATE RULE**
 ![alt text](sample_images/image.png)
