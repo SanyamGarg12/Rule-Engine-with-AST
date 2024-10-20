@@ -106,7 +106,7 @@
 
         <!-- Evaluate Rule Section -->
         <h2>Evaluate Rule</h2>
-        <label for="evaluateRuleAst">Combined Rule AST:</label>
+        <label for="evaluateRuleAst">Combined Rule AST (JSON format):</label>
         <input type="text" id="evaluateRuleAst" placeholder="Enter combined AST" required>
         
         <label for="userData">User Data (JSON):</label>
@@ -122,7 +122,7 @@
             const name = document.getElementById('ruleName').value;
             const rule_string = document.getElementById('ruleString').value;
 
-            const response = await fetch('http://0.0.0.0:8000/create_rule', {
+            const response = await fetch('http://192.168.47.79:8000/create_rule', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
@@ -144,7 +144,7 @@
         }
 
         async function downloadDatabase() {
-            const response = await fetch('http://0.0.0.0:8000/database', {
+            const response = await fetch('http://192.168.47.79:8000/database', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
@@ -172,7 +172,7 @@
             const ruleIds = document.getElementById('combineRuleIds').value.split(',').map(id => id.trim());
             const combinedName = document.getElementById('combinedRuleName').value;
 
-            const response = await fetch('http://0.0.0.0:8000/combine_rules', {
+            const response = await fetch('http://192.168.47.79:8000/combine_rules', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
@@ -189,7 +189,7 @@
                 const result = await response.json();
                 data.textContent = 'Combined Rule Created: ' + JSON.stringify(result);
             } else {
-                data.textContent = 'Error: ' + (await response.json()).detail;
+                data.textContent = 'Error: ' + data.detail;
             }
         }
 
@@ -197,7 +197,7 @@
             const combinedAst = document.getElementById('evaluateRuleAst').value;
             const userData = document.getElementById('userData').value;
 
-            const response = await fetch('http://0.0.0.0:8000/evaluate_rule', {
+            const response = await fetch('http://192.168.47.79:8000/evaluate_rule', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
@@ -214,7 +214,7 @@
                 const result = await response.json();
                 data.textContent = 'Evaluation Result: ' + JSON.stringify(result);
             } else {
-                data.textContent = 'Error: ' + (await response.json()).detail;
+                data.textContent = 'Error: ' + data.detail;
             }
         }
     </script>

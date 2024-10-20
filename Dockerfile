@@ -18,7 +18,7 @@ COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 
 # Copy the rest of the project files to the container
-COPY . /Rule-Engine-with-AST
+COPY . .
 
 # Expose the port FastAPI will run on (default: 8000)
 EXPOSE 8000
