@@ -8,7 +8,6 @@ A simple rule engine implemented with FastAPI and PostgreSQL. This application a
 - [Technologies](#technologies)
 - [Installation](#installation)
 - [Running with Docker Hub](#running-with-docker-image-using-docker-hub)
-- [Using .tar as alternate of Docker Hub](#using-tar-file-instead-of-docker-hub)
 - [Download Database](#download-current-database)
 - [Delete Database](#delete-all-entries-in-the-database)
 - [License](#license)
@@ -36,30 +35,37 @@ A simple rule engine implemented with FastAPI and PostgreSQL. This application a
 - PostgreSQL 13 or later
 - pip (Python package installer)
 
-NOTE - All DATA YOU ENTER FOR TESTING IS CASE SENSITIVE
 ### Step-by-Step Installation
 
 1. **Clone the repository:**
 
-   ```bash
-   git clone https://github.com/SanyamGarg12/Rule-Engine-with-AST.git
+    ```bash
+    git clone https://github.com/SanyamGarg12/Rule-Engine-with-AST.git
+    ```
 
 2. **Install requirements:**
+
     ```bash
     pip install -r requirements.txt
+    ```
 
 3. **Create Database**
-    Create your own database with a user who is granted all permissions to it and replace your db link with DATABASE_URL in main.py. I have used postgres, so it would be great if you have postgres already setup. otherwise MySql,etc. will also work.
+
+    Create your own database with a user who is granted all permissions to it and replace your db link with DATABASE_URL in main.py. I have used postgres, so it would be great if you have postgres already setup. otherwise MySql, etc. will also work.
 
 4. **Run Backend:**
+
     ```bash
     uvicorn main:app --reload
+    ```
 
 5. **Run Frontend:**
-    In separate terminal, 
+
+    In separate terminal,
+
     ```bash
     start .\index.html
-
+    ```
 
 ## Running with Docker image using Docker Hub
 
@@ -69,46 +75,42 @@ NOTE - All DATA YOU ENTER FOR TESTING IS CASE SENSITIVE
     docker login
     ```
 
+    Note: Make sure you have postgres setup
+
 2. **Pull the docker image from docker hub:**
+
     ```bash
     docker pull sanyamgarg12/rule-engine-app
     ```
 
 3. **Run Backend**
+
     ```bash
-    docker run -p 8000:8000 sanyamgarg12/rule-engine-app
+    docker run -p 8000:8000 -e DATABASE_URL=postgresql://your_user_name:your_password@host.docker.internal:5432/database_name sanyamgarg12/rule-engine-app
     ```
-   Note : Make sure you have postgres setup
+
+- NOTE : Make sure port 5432 is available otherwise change it accordingly. Also replace your_user_name, your password, database_name with your credentials in above bash script.
 4. **Run Frontend in separate terminal**
-   - **Enter project directory**
-    ``` bash
-    cd RULE-ENGINE-WITH-AST
-    ```
-   - **Execute index.html**
-    ``` bash
-    start .\index.html
-    ```
 
-Open your web browser and navigate to http://localhost:8000 to access the Rule Engine API.
+    - **Enter project directory**
 
+        ```bash
+        cd RULE-ENGINE-WITH-AST
+        ```
 
-## Using .tar file instead of Docker Hub
+    - **Execute index.html**
 
-1. **Log in with docker in terminal:**
+        ```bash
+        start .\index.html
+        ```
 
-    ```bash
-    docker login
-    ```
-
-2. **Pull the docker image from docker hub:**
-
-    ```bash
-    docker load -i rule-engine-app.tar
+Open your web browser and navigate to http://localhost:8000 or http://your.ip.address:8000 to access the Rule Engine API.
 
 ## How Application will look
 
 1. **CREATE RULE**
-![alt text](sample_images/image.png)
+
+    ![alt text](sample_images/image.png)
 
 2. **Combine RULE**
 ![alt text](sample_images/image-1.png)
@@ -136,4 +138,3 @@ Open your web browser and navigate to http://localhost:8000 to access the Rule E
     ```bash
     python empty_db.py
     ```
-
