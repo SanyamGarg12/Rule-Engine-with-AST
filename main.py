@@ -10,6 +10,7 @@ from datetime import datetime
 from typing import Optional
 from fastapi.responses import FileResponse
 import subprocess
+import os
 # Initialize FastAPI application
 app = FastAPI(title="3-Tier Rule Engine with AST")
 
@@ -18,8 +19,7 @@ app = FastAPI(title="3-Tier Rule Engine with AST")
 # -----------------------
 
 # PostgreSQL connection string
-# DATABASE_URL = "postgresql://rule_user:1234567@localhost:5433/rule_engine"
-DATABASE_URL = "postgresql://rule_user:1234567@host.docker.internal:5433/rule_engine"
+DATABASE_URL = os.getenv('DATABASE_URL', 'postgresql://default_user:default_pass@host.docker.internal:5432/default_db')
 
 # Create the SQLAlchemy engine
 engine = create_engine(DATABASE_URL)
