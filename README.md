@@ -36,6 +36,7 @@ A simple rule engine implemented with FastAPI and PostgreSQL. This application a
 - PostgreSQL 13 or later
 - pip (Python package installer)
 
+NOTE - All DATA YOU ENTER FOR TESTING IS CASE SENSITIVE
 ### Step-by-Step Installation
 
 1. **Clone the repository:**
