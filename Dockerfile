@@ -23,5 +23,9 @@ COPY . .
 # Expose the port FastAPI will run on (default: 8000)
 EXPOSE 8000
 
+# Set environment variables (e.g., for DATABASE_URL)
+# You can define a default value or leave it blank for users to override
+ENV DATABASE_URL="postgresql://rule_user:1234567@host.docker.internal:5433/rule_engine"
+
 # Command to run the FastAPI app
 CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8000"]
