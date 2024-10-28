@@ -138,3 +138,5 @@ Open your web browser and navigate to http://localhost:8000 or http://your.ip.ad
     ```bash
     python empty_db.py
     ```
+## License
+- MIT License : [License](./LICENSE)
